@@ -4,7 +4,7 @@ Feature: Create project
 
   Scenario: Login
     Given I open url "https://uat-languagecloud.sdl.com/lc/login"
-    When I login with "admin.test.uat@sdl.testinator.com" and "Weaver123"
+    When I login with "email" and "password"
 
   Scenario: Create project
     And I open Projects page
