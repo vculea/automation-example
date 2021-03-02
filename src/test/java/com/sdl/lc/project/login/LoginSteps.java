@@ -2,7 +2,6 @@ package com.sdl.lc.project.login;
 
 import com.sdl.lc.pages.LoginView;
 import com.sdl.lc.project.TestBase;
-import com.sdl.selenium.utils.config.WebDriverConfig;
 import com.sdl.selenium.web.utils.Utils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -15,13 +14,13 @@ public class LoginSteps extends TestBase {
 
     @Then("I logout from LC")
     public void logout() {
-        WebDriverConfig.getDriver().manage().deleteAllCookies();
-        WebDriverConfig.getDriver().navigate().refresh();
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 
     @Given("I open url {string}")
     public void iOpenUrl(String url) {
-        WebDriverConfig.getDriver().get(url);
+        driver.get(url);
     }
 
     @And("I stop the test")
