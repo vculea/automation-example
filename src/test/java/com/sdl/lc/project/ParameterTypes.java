@@ -24,16 +24,4 @@ public class ParameterTypes {
     public String listOfStringListsType(String cell) {
         return cell;
     }
-
-    @ParameterType(name = "list", value = "\"[\\d_,;:.{}+=~#$%`\\\\&\\-\\pL\\pM'!()<>\\s™®©?@^\\p{Sc}\\/؟]+\"")
-    public List<String> list(String strings) {
-        String s = strings; //CucumberTypeUtils.removeDoubleQuotes(strings);
-        String first = s.substring(0, 1);
-        String splitChar = ",";
-        if (first.equals(";")) {
-            splitChar = ";";
-            s = s.substring(1);
-        }
-        return Arrays.stream(s.split(splitChar)).map(String::trim).collect(Collectors.toList());
-    }
 }

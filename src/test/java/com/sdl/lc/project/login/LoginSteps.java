@@ -1,6 +1,6 @@
 package com.sdl.lc.project.login;
 
-import com.sdl.lc.common.LoginView;
+import com.sdl.lc.pages.LoginView;
 import com.sdl.lc.project.TestBase;
 import com.sdl.selenium.utils.config.WebDriverConfig;
 import com.sdl.selenium.web.utils.Utils;
@@ -8,10 +8,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 
-@Slf4j
 public class LoginSteps extends TestBase {
     private final LoginView loginView = new LoginView();
 

@@ -1,4 +1,4 @@
-package com.sdl.lc.common;
+package com.sdl.lc.pages;
 
 public class ProjectsView {
     private final String projects = "//a[contains(@class, 'x-btn') and count(*//text()[.='Projects']) > 0]";

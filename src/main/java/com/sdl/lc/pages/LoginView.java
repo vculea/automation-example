@@ -1,4 +1,4 @@
-package com.sdl.lc.common;
+package com.sdl.lc.pages;
 
 public class LoginView {
     private final String email = "email";

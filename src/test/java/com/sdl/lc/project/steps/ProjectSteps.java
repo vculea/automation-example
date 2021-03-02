@@ -1,6 +1,6 @@
 package com.sdl.lc.project.steps;
 
-import com.sdl.lc.common.ProjectsView;
+import com.sdl.lc.pages.ProjectsView;
 import com.sdl.lc.project.TestBase;
 import com.sdl.selenium.web.utils.Utils;
 import io.cucumber.java.en.And;
