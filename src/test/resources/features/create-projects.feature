@@ -10,6 +10,7 @@ Feature: Create project
     And I open Projects page
     And I click on 'New Project' button
     And I stop the test
+#    Continue to write steps
 
 
   Scenario: Logout
