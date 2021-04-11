@@ -3,7 +3,6 @@ package com.sdl.lc.project.steps;
 import com.sdl.lc.pages.ProjectsView;
 import com.sdl.lc.project.TestBase;
 import file.FileHelper;
-import helpers.ActionsHelper;
 import helpers.MappingsHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -12,6 +11,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import static helpers.ActionsHelper.selectValueDropdownAndWait;
+import static helpers.ActionsHelper.waitForNotificationMessage;
 
 public class ProjectSteps extends TestBase {
     ProjectsView projectsView = new ProjectsView();
@@ -67,22 +69,23 @@ public class ProjectSteps extends TestBase {
 
     @And("I fill in the Translation Engine {string}")
     public void iFillInTheTranslationEngine(String translationEngine){
-        ActionsHelper.selectValueDropdownAndWait(driver, projectsView.getTranslationEngine(), translationEngine, "Termbases");
+        selectValueDropdownAndWait(driver, projectsView.getTranslationEngine(), translationEngine, "Termbases");
     }
 
     @And("I fill in the Pricing Model {string}")
     public void iFillInThePricingModel(String pricingModel){
-        ActionsHelper.selectValueDropdownAndWait(driver, projectsView.getPricingModel(), pricingModel, "Additional language costs");
+        selectValueDropdownAndWait(driver, projectsView.getPricingModel(), pricingModel, "Additional language costs");
     }
 
     @And("I fill in the Workflow {string}")
     public void iFillInTheWorkflow(String workflow){
-        ActionsHelper.selectValueDropdownAndWait(driver, projectsView.getWorkflow(), workflow, "Preprocessing");
+        selectValueDropdownAndWait(driver, projectsView.getWorkflow(), workflow, "Preprocessing");
     }
 
     @And("I click the create and start button")
     public void iClickTheCreateAndStartButton(){
         driver.findElement(By.xpath(projectsView.getCreateAndStartButton())).click();
+        waitForNotificationMessage(driver, projectName);
     }
 
     @Then("The project with random name was created correctly")

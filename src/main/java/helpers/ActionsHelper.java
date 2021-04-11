@@ -16,4 +16,9 @@ public class ActionsHelper {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format("//*[text() = '%s']", textToWaitFor))));
     }
+
+    public static void waitForNotificationMessage(WebDriver driver, String projectName){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(String.format("//p[text() = 'Successfully created your project ']//a[text() = '%s']", projectName))));
+    }
 }
