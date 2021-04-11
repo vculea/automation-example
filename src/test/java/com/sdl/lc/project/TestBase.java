@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestBase.class);
@@ -20,6 +21,7 @@ public class TestBase {
                 LOGGER.info("=========================START======================================");
                 try {
                     driver = WebDriverConfig.getWebDriver(Browser.CHROME);
+                    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                     FileUtils.forceMkdir(new File(WebDriverConfig.getDownloadPath()));
                 } catch (IOException e) {
                     LOGGER.error("{}", e.getMessage());
